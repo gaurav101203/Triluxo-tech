@@ -43,7 +43,6 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
-import gradio as gr
 import os
 
 urls = ["https://brainlox.com/courses/category/technical"]
