@@ -1,6 +1,18 @@
+# !pip install langchain_google_vertexai langchain_community langgraph nltk
+
+# !pip install --upgrade google-auth google-auth-oauthlib google-api-python-client google.cloud unstructured
+
+# !gcloud auth login          # Log In with your google cloud account
+
+# !gcloud config set project project-ID         # Enter your project ID where Vertex AI API is enabled and have all the permissions
+
+# !gcloud projects add-iam-policy-binding project-ID \
+#     --member="serviceAccount:Service account email" \
+#     --role="roles/aiplatform.user"
+
 # Ensure your VertexAI credentials are configured
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./GOOGLE_APPLICATION_CREDENTIALS.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./GOOGLE_APPLICATION_CREDENTIALS.json"  #Upload your Google Cloud Service account(.json) key
 
 
 from google.oauth2 import service_account
@@ -15,7 +27,7 @@ credentials.refresh(Request())
 from google.cloud import aiplatform as vertexai
 
 vertexai.init(
-    project="rag-model-448019",  # Replace with your Google Cloud project ID
+    project="project ID",  # Replace with your Google Cloud project ID
     location="us-central1",
     credentials=credentials
 )
@@ -45,7 +57,7 @@ from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
 import os
 
-urls = ["https://brainlox.com/courses/category/technical"]
+urls = ["https://brainlox.com/courses/category/technical"]  # Put any URL that you want to upload
 loader = UnstructuredURLLoader(urls=urls)
 
 docs = loader.load()
@@ -86,7 +98,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
