@@ -1,14 +1,14 @@
 # Ensure your VertexAI credentials are configured
 import os
 import gradio as gr
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./rag-model-448019-fe37e29d6e38.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./GOOGLE_APPLICATION_CREDENTIALS.json"
 
 
 from google.oauth2 import service_account
 from google.auth.transport.requests import Request
 
 credentials = service_account.Credentials.from_service_account_file(
-    "./rag-model-448019-fe37e29d6e38.json",
+    "./GOOGLE_APPLICATION_CREDENTIALS.json",
     scopes=["https://www.googleapis.com/auth/cloud-platform"]
 )
 credentials.refresh(Request())
