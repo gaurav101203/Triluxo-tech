@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import ReactMarkdown from 'react-markdown'; // Import Markdown renderer
+import ReactMarkdown from 'react-markdown'; 
 import './App.css';
 
 export function App() {
@@ -20,7 +20,7 @@ export function App() {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/chatbot', {
+      const response = await axios.post('http://127.0.0.1:5000/chatbot', {  
         question: userInput,
       });
       const botResponse = response.data.answer;
