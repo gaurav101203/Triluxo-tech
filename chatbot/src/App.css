@@ -1,14 +1,12 @@
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
-  background-image: url("../public/1.jpg"); /* Default background image */
+  background-image: url("../public/1.jpg"); 
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   height: 100vh;
   background-color: #f0f2f5;
 }
@@ -41,7 +39,6 @@ h1 {
 
 .messages {
   overflow-y: auto;
-  /* max-height: 300px; */
   margin-bottom: 20px;
 }
 
@@ -100,12 +97,10 @@ button:hover {
   background-color: #4c51bf;
 }
 
-/* Media Queries for Responsiveness */
-
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
   body {
-    background-image: url("../public/3.jpg"); /* New background image for mobile */
+    background-image: url("../public/3.jpg"); 
     background-attachment:scroll; 
   }
 
@@ -116,8 +111,6 @@ button:hover {
 
   .chat-container {
     width: 90%;
-    /* max-width: 450px; */
-    /* margin-bottom: 100px; */
   }
 
   .chat-box {
