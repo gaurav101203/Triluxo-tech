@@ -38,7 +38,7 @@ nltk.download('averaged_perceptron_tagger_eng')
 
 import bs4
 from langchain import hub
-from langchain_community.document_loaders import SeleniumURLLoader
+from langchain_community.document_loaders import UnstructuredURLLoader
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import START, StateGraph
@@ -46,7 +46,7 @@ from typing_extensions import List, TypedDict
 import os
 
 urls = ["https://brainlox.com/courses/category/technical"]
-loader = SeleniumURLLoader(urls=urls)
+loader = UnstructuredURLLoader(urls=urls)
 
 docs = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
