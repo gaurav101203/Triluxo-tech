@@ -1,6 +1,5 @@
 # Ensure your VertexAI credentials are configured
 import os
-import gradio as gr
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./GOOGLE_APPLICATION_CREDENTIALS.json"
 
 
