@@ -27,7 +27,7 @@ credentials.refresh(Request())
 from google.cloud import aiplatform as vertexai
 
 vertexai.init(
-    project="project ID",  # Replace with your Google Cloud project ID
+    project="rag-model-448019",  # Replace with your Google Cloud project ID
     location="us-central1",
     credentials=credentials
 )
